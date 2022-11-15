@@ -2,7 +2,7 @@
 node_modules
 .tmp
 npm-debug.log
-wisdompets/db.sqlite3
+pet/db.sqlite3
 __pycache__/
 *.py[cod]
 
