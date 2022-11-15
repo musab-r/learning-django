@@ -1,6 +1,6 @@
 from django.db import models
 
-class Pet(models.model):
+class Pet(models.Model):
     SEX_CHIOCES = [('M','Male'),('F','Female')]
     name = models.CharField(max_length=100)
     submitter = models.CharField(max_length=100)
@@ -10,7 +10,7 @@ class Pet(models.model):
     sex = models.CharField(max_length=1, choices=SEX_CHIOCES, blank=True)
     submission_date = models.DateTimeField()
     age = models.IntegerField(null=True)
-    vaccination = models.ManyToManyField('Vaccine', blank=True)
+    vaccinations = models.ManyToManyField('Vaccine', blank=True)
 
 class Vaccine(models.Model):
     name = models.CharField(max_length=50)
