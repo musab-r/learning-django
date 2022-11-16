@@ -1,1 +1,34 @@
-<h1>pet details</h1>
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+    <div class="card" style="margin: .5rem;" >
+        <div class="card-body">
+            <h3 class="card-title">{{ pet.name|capfirst }}</h3>
+            <p class="card-subtitle text-muted lead" >{{ pet.species }}</p>
+            <hr>
+            {% if pet.breed %}
+                <p class="card-text"><b>Breed</b>: {{ pet.breed }}</p>
+            {% endif %}
+            {% if pet.age %}
+                <p class="card-text"><b>Age</b>: {{ pet.age }}</p>
+            {% endif %}
+            {% if pet.sex %}
+                <p class="card-text"><b>Sex</b>: {{ pet.sex }}</p>
+            {% endif %}
+            {% if pet.vaccinations.all %}
+                <p class="card-text"><b>Vaccinations for</b>: </p>
+                <ul class="list-group">
+                    {% for vaccine in pet.vaccinations.all %}
+                        <li class="list-group-item">{{vaccine}}</li>
+                    {% endfor%}
+                </ul>
+            {% endif %}
+            <p class="card-text"><b>Submitted by</b>: {{ pet.submitter }}</p>
+            <p class="card-text"><b>Submitted on</b>: {{ pet.submission_date|date:"M d Y" }}</p>
+            <p class="card-text"><b>Description</b>: {{ pet.description }}</p>
+        </div>
+    </div>
+</body>
+{% endblock %}
+<!-- </html> -->
