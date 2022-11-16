@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1">    
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="{% static 'vender/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
+        <script src="{% static 'vender/js/bootstrap.min.js' %}"></script>
+        <title>Home - Pet Medicine</title>
+        <link rel="stylesheet" id="ample-style-css" href="http://wisdompets.com/wp-content/themes/ample/style.css?ver=4.8.3" type="text/css" media="all">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="\">
+                    <img src="{% static 'assets/images/1.png' %}" alt="" width="30" height="24">
+                </a>
+                <div class="card-title ">
+                    <h5>Pet Medicine</h5>
+                </div>
+            </div>
+        </nav>
+        <div>
+            <header>
+                <div class="text-center">
+                    <img class="img-fluid" src="{% static 'assets/images/2.png' %}" alt="Pet Medicine" width="30%" height="30">
+                </div>
+            </header>
+            <div>
+                <div class="text-center">
+                    <div class="card-subtitle text-muted lead " style="padding-left: 60px; padding-right: 60px; padding-top: 20px;">
+                        <p>Pet Medicine strives to blend the best in traditional and alternative medicine in the diagnosis and treatment of health conditions in companion animals, including dogs, cats, birds, reptiles, rodents, and fish. We apply the latest healthcare technology, along with the wisdom garnered in the centuries old tradition of veterinary medicine, to find the safest and most effective treatments and cures, while maintaining a caring relationship with our patients and their guardians.</p>
+                    </div>
+                </div>
+                <div>
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+            <footer>
+                <div class="inner-wrap">
+                    Pet Medicine is a fictitious brand created by Musab, solely for the purpose of training. All products and people associated with Pet Medicine are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Please see your veterinarian for all matters related to your pet's health.
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

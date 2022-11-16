@@ -1,15 +1,6 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1">    
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{% static 'vender/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
-    <script src="{% static 'vender/js/bootstrap.min.js' %}"></script>
-</head>
+{% block content %}
 <body>
     <div class="card" style="margin: .5rem;" >
         <div class="card-body">
@@ -29,7 +20,7 @@
                 <p class="card-text"><b>Vaccinations for</b>: </p>
                 <ul class="list-group">
                     {% for vaccine in pet.vaccinations.all %}
-                        <li class="list-group-item">vaccine</li>
+                        <li class="list-group-item">{{vaccine}}</li>
                     {% endfor%}
                 </ul>
             {% endif %}
@@ -39,4 +30,5 @@
         </div>
     </div>
 </body>
-</html>
+{% endblock %}
+<!-- </html> -->

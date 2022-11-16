@@ -1,15 +1,6 @@
-{% load static %}
+{% extends "base.html" %}
+{% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1">    
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{% static 'vender/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
-    <script src="{% static 'vender/js/bootstrap.min.js' %}"></script>
-</head>
 <body>
     <div class="card" style="margin: .5rem;">
         {% for pet in pets %}
@@ -27,4 +18,5 @@
         {% endfor %}
     </div>
 </body>
-</html>
+{% endblock %}
+<!-- </html> -->
