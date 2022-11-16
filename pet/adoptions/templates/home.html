@@ -1,1 +1,31 @@
-<h1>home</h1>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">    
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'vender/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
+    <script src="{% static 'vender/js/bootstrap.min.js' %}"></script>
+
+</head>
+<body>
+    <div class="card" >
+        {% for pet in pets %}
+            <div class="card-body">
+                <a class="card-link" href="{% url 'pet_detail' pet.id %}">
+                <h3 class="card-title">{{ pet.name|capfirst }}</h3>
+                </a>
+                <p class="card-subtitle mb-2 text-muted" >{{ pet.species }}</p>
+                {% if pet.breed %}
+                    <p>Breed: {{ pet.breed }}</p>
+                {% endif %}
+                <p class="card-text">{{ pet.description }}</p>
+                <hr>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
